@@ -123,7 +123,6 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     day = localtime().tm_mday
     today = datetime.date(datetime(year=year, month=month, day=day))
     week = week_list[today.isoweekday() % 7]
-    # 获取在一起的日子的日期格式
     # 获取所有生日数据
     birthdays = {}
     for k, v in config.items():
@@ -153,10 +152,6 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
             },
             "wind_dir": {
                 "value": wind_dir,
-                "color": get_color()
-            },
-            "love_day": {
-                "value": love_days,
                 "color": get_color()
             },
             "note_en": {
